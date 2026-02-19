@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'; // Nueva importación
 import Dashboard from './Dashboard/Dashboard'; // Nueva importación
 import Reviews from './Reviews/Reviews'; // Nueva importación
 import AboutMe from './AboutMe/AboutMe'; // Nueva importación
+import AboutUs from './AboutUs/AboutUs';
 
 import './App.css';
 import Header from './Header/Header';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </div>
   );
