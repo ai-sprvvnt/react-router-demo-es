@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Review.css';
 
 function Review({ reviews }) {
+  const navigate = useNavigate();
   const params = useParams();
   let id = params.reviewId;
   id = id - 1;
@@ -15,6 +16,10 @@ function Review({ reviews }) {
           <p className="review__rating">
             Calificación final:{reviews[id]?.rating}/5
           </p>
+          {/* Agrega un botón. */}
+          <button type="button" onClick={() => navigate('/reviews')}>
+            Volver a la lista de reseñas
+          </button>
         </div>
       )}
     </div>
