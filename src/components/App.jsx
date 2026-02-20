@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './Header/Header';
+import PageNotFound from './PageNotFound/PageNotFound';
 import Dashboard from './Dashboard/Dashboard';
 import Reviews from './Reviews/Reviews';
 import Review from './Review/Review';
@@ -34,6 +35,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path="*" element={<PageNotFound />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route
