@@ -1,23 +1,38 @@
-import { Routes, Route } from 'react-router-dom'; // Nueva importación
-import Dashboard from './Dashboard/Dashboard'; // Nueva importación
-import Reviews from './Reviews/Reviews'; // Nueva importación
-import AboutMe from './AboutMe/AboutMe'; // Nueva importación
+//App.jsx
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './Dashboard/Dashboard';
+import Reviews from './Reviews/Reviews';
+import Header from './Header/Header';
 import AboutUs from './AboutUs/AboutUs';
+import AboutMe from './AboutMe/AboutMe';
+// Importa nuevos componentes
+import Contact from './AboutMe/Contact';
+import Hobbies from './AboutMe/Hobbies';
+import MyStory from './AboutMe/MyStory';
+
+import SiteHistory from './AboutUs/SiteHistory';
+import SiteMission from './AboutUs/SiteMission';
 
 import './App.css';
-import Header from './Header/Header';
 
 function App() {
+  // Agrega las rutas hijo a la ruta /about-me.
   return (
     <div className="App">
       <Header />
-      {/* Envuelve un componente Route dentro de un componente Routes  
-          y especifica la ruta y los atributos del elemento tal como se muestra. */}
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews />} />
-        <Route path="/about-me" element={<AboutMe />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-me" element={<AboutMe />}>
+          <Route path="contact" element={<Contact />} />
+          <Route path="hobbies" element={<Hobbies />} />
+          <Route path="my-story" element={<MyStory />} />
+        </Route>
+
+        <Route path="/about-us" element={<AboutUs />}>
+          <Route path="site-history" element={<SiteHistory />} />
+          <Route path="site-mission" element={<SiteMission />} />
+        </Route>
       </Routes>
     </div>
   );
